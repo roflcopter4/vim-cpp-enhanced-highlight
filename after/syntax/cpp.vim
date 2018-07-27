@@ -509,7 +509,7 @@ syntax keyword cppSTLfunction signal
 syntax keyword cppSTLfunction signaling_NaN
 syntax keyword cppSTLfunction sin
 syntax keyword cppSTLfunction sinh
-"syntax keyword cppSTLfunction size
+syntax keyword cppSTLfunction size
 syntax keyword cppSTLfunction sort
 syntax keyword cppSTLfunction sort_heap
 syntax keyword cppSTLfunction splice
@@ -551,7 +551,7 @@ syntax keyword cppSTLfunction swap_ranges
 syntax keyword cppSTLfunction swprintf
 syntax keyword cppSTLfunction swscanf
 syntax keyword cppSTLfunction sync_with_stdio
-"syntax keyword cppSTLfunction system
+syntax keyword cppSTLfunction system
 syntax keyword cppSTLfunction tan
 syntax keyword cppSTLfunction tanh
 syntax keyword cppSTLfunction tellg
@@ -885,7 +885,7 @@ syntax keyword cppSTLfunction has_facet
 syntax keyword cppSTLfunction isspace isblank iscntrl isupper islower isalpha
 syntax keyword cppSTLfunction isdigit ispunct isxdigit isalnum isprint isgraph
 
-if !exists("cpp_no_cpp11")
+if !exists('cpp_no_cpp11')
     syntax keyword cppSTLconstant nullptr
 
     " containers (array, vector, list, *map, *set, ...)
@@ -1145,9 +1145,9 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLfunction iswblank
 
     " memory
-    syntax keyword cppSTLtype unique_ptr
-    syntax keyword cppSTLtype shared_ptr
-    syntax keyword cppSTLtype weak_ptr
+    " syntax keyword cppSTLtype unique_ptr
+    " syntax keyword cppSTLtype shared_ptr
+    " syntax keyword cppSTLtype weak_ptr
     syntax keyword cppSTLtype owner_less
     syntax keyword cppSTLtype enable_shared_from_this
     syntax keyword cppSTLtype default_delete
@@ -1523,7 +1523,7 @@ if !exists("cpp_no_cpp11")
 endif " C++11
 
 
-if !exists("cpp_no_cpp14")
+if !exists('cpp_no_cpp14')
     " chrono
     syntax keyword cppSTLnamespace literals
     syntax keyword cppSTLnamespace chrono_literals
@@ -1584,7 +1584,7 @@ if !exists("cpp_no_cpp14")
 endif " C++14
 
 
-if !exists("cpp_no_cpp17")
+if !exists('cpp_no_cpp17')
     " algorithm
     syntax keyword cppSTLfunction clamp
     syntax keyword cppSTLfunction for_each_n
@@ -1976,7 +1976,7 @@ if !exists("cpp_no_cpp17")
 endif " C++17
 
 
-if !exists("cpp_no_cpp20")
+if !exists('cpp_no_cpp20')
     " type_traits
     syntax keyword cppSTLtype remove_cvref remove_cvref_t
 endif
@@ -2058,16 +2058,16 @@ if exists('g:cpp_concepts_highlight') && g:cpp_concepts_highlight
 endif " C++ concepts
 
 
-if !exists("cpp_no_boost")
+if !exists('cpp_no_boost')
     syntax keyword cppSTLnamespace boost
     syntax keyword cppSTLcast lexical_cast
 endif " boost
 
 
 " Default highlighting
-if version >= 508 || !exists("did_cpp_syntax_inits")
-  if version < 508
-    let did_cpp_syntax_inits = 1
+if v:version >= 508 || !exists('did_cpp_syntax_inits')
+  if v:version < 508
+    let g:did_cpp_syntax_inits = 1
     command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>

@@ -18,11 +18,11 @@
 " -----------------------------------------------------------------------------
 "  Highlight function names.
 " -----------------------------------------------------------------------------
-if !exists('g:cpp_no_function_highlight')
-    syn match    cCustomParen    transparent "(" contains=cParen contains=cCppParen
-    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
-    hi def link cCustomFunc  Function
-endif
+" if !exists('g:cpp_no_function_highlight')
+"     syn match    cCustomParen    transparent "(" contains=cParen contains=cCppParen
+"     syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+"     hi def link cCustomFunc  Function
+" endif
 
 " -----------------------------------------------------------------------------
 "  Highlight member variable names.
@@ -40,7 +40,7 @@ endif
 
 " Common ANSI-standard functions
 syn keyword cAnsiFunction	MULU_ DIVU_ MODU_ MUL_ DIV_ MOD_
-syn keyword cAnsiFunction	main typeof
+syn keyword cAnsiFunction	main
 syn keyword cAnsiFunction	open close read write lseek dup dup2
 syn keyword cAnsiFunction	fcntl ioctl
 syn keyword cAnsiFunction	wctrans towctrans towupper
@@ -73,22 +73,22 @@ syn keyword cAnsiFunction	strfxtime strftime localtime
 syn keyword cAnsiFunction	gmtime ctime asctime
 syn keyword cAnsiFunction	time mkxtime mktime
 syn keyword cAnsiFunction	difftime clock strlen
-syn keyword cAnsiFunction	strerror memset strtok
+syn keyword cAnsiFunction	strerror memset strtok strsep
 syn keyword cAnsiFunction	strstr strspn strrchr
 syn keyword cAnsiFunction	strpbrk strcspn strchr
 syn keyword cAnsiFunction	memchr strxfrm strncmp
-syn keyword cAnsiFunction	strcoll strcmp memcmp
+syn keyword cAnsiFunction	strcoll strcmp memcmp memmem
 syn keyword cAnsiFunction	strncat strcat strncpy
+syn keyword cAnsiFunction	strlcat strlcpy strtonum
 syn keyword cAnsiFunction	strcpy memmove memcpy
 syn keyword cAnsiFunction	wcstombs mbstowcs wctomb
 syn keyword cAnsiFunction	mbtowc mblen lldiv
 syn keyword cAnsiFunction	ldiv div llabs
 syn keyword cAnsiFunction	labs abs qsort
-"syn keyword cAnsiFunction	bsearch system getenv
-syn keyword cAnsiFunction	bsearch getenv
+syn keyword cAnsiFunction	bsearch system getenv
 syn keyword cAnsiFunction	exit atexit abort
-syn keyword cAnsiFunction	realloc malloc free
-syn keyword cAnsiFunction	calloc srand rand
+" syn keyword cAnsiFunction	realloc malloc free calloc
+syn keyword cAnsiFunction	srand rand
 syn keyword cAnsiFunction	strtoull strtoul strtoll
 syn keyword cAnsiFunction	strtol strtold strtof
 syn keyword cAnsiFunction	strtod atoll atol
@@ -203,7 +203,7 @@ syn keyword cAnsiFunction	csinf csin ccosl
 syn keyword cAnsiFunction	ccosf ccos catanl
 syn keyword cAnsiFunction	catanf catan casinl
 syn keyword cAnsiFunction	casinf casin cacosl
-syn keyword cAnsiFunction	cacosf cacos assert
+syn keyword cAnsiFunction	cacosf cacos
 syn keyword cAnsiFunction	UINTMAX_C INTMAX_C UINT64_C
 syn keyword cAnsiFunction	UINT32_C UINT16_C UINT8_C
 syn keyword cAnsiFunction	INT64_C INT32_C INT16_C INT8_C
