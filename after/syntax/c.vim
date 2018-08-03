@@ -87,7 +87,6 @@ syn keyword cAnsiFunction	ldiv div llabs
 syn keyword cAnsiFunction	labs abs qsort
 syn keyword cAnsiFunction	bsearch system getenv
 syn keyword cAnsiFunction	exit atexit abort
-" syn keyword cAnsiFunction	realloc malloc free calloc
 syn keyword cAnsiFunction	srand rand
 syn keyword cAnsiFunction	strtoull strtoul strtoll
 syn keyword cAnsiFunction	strtol strtold strtof
